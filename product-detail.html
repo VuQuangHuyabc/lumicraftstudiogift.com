@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Detail - Lumi Craft Studio Gift LLC</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="top-bar">
+            <div class="container">
+                <div class="contact-info">
+                    <i class="fas fa-envelope"></i> contact@lumicraftstudiogift.com
+                    <span class="ms-3"><i class="fas fa-map-marker-alt"></i> 1012 Marquez Place, Ste. 106-B Santa Fe, NM 87505</span>
+                </div>
+                <div class="social-links">
+                    <a href="#" class="text-white me-2"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="text-white me-2"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-white"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-lg main-nav">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <i class="fas fa-lightbulb me-2"></i>Lumi Craft Studio Gift
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="products.html">Products</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="cart.html">
+                                <i class="fas fa-shopping-cart"></i> Cart
+                                <span class="cart-badge" id="cart-count">0</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="py-3 bg-light">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="products.html">Products</a></li>
+                    <li class="breadcrumb-item active" id="product-name-breadcrumb">Product Detail</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Product Detail -->
+    <section class="py-5">
+        <div class="container">
+            <div class="product-detail-container">
+                <div class="row">
+                    <!-- Product Images -->
+                    <div class="col-lg-6">
+                        <div class="main-image-container">
+                            <img id="main-product-image" src="" alt="Product Image" class="main-product-image">
+                        </div>
+                        <div class="thumbnail-images" id="thumbnail-images">
+                            <!-- Thumbnails will be loaded by JavaScript -->
+                        </div>
+                    </div>
+                    
+                    <!-- Product Info -->
+                    <div class="col-lg-6">
+                        <h1 id="product-title">Loading...</h1>
+                        <div class="product-rating mb-3">
+                            <div class="stars text-warning">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="text-muted">(5 Reviews)</span>
+                        </div>
+                        
+                        <div class="product-price-section mb-4">
+                            <span class="product-price" id="product-price">$0.00</span>
+                            <span class="product-old-price" id="product-old-price">$0.00</span>
+                            <span class="badge bg-success ms-2">20% OFF</span>
+                        </div>
+                        
+                        <div class="product-description mb-4">
+                            <p id="product-description">Loading product description...</p>
+                        </div>
+                        
+                        <!-- Product Variants -->
+                        <div class="product-variants mb-4">
+                            <h5>Size Options:</h5>
+                            <div id="size-variants">
+                                <button class="variant-option" data-size="small">Small</button>
+                                <button class="variant-option" data-size="medium">Medium</button>
+                                <button class="variant-option" data-size="large">Large</button>
+                            </div>
+                        </div>
+                        
+                        <div class="product-variants mb-4">
+                            <h5>Color Options:</h5>
+                            <div id="color-variants">
+                                <button class="variant-option" data-color="brass">Brass</button>
+                                <button class="variant-option" data-color="bronze">Bronze</button>
+                                <button class="variant-option" data-color="silver">Silver</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Quantity Selector -->
+                        <div class="quantity-selector mb-4">
+                            <label class="me-3">Quantity:</label>
+                            <button class="quantity-btn" id="decrease-qty">-</button>
+                            <input type="number" class="quantity-input" id="quantity-input" value="1" min="1" max="10">
+                            <button class="quantity-btn" id="increase-qty">+</button>
+                        </div>
+                        
+                        <!-- Action Buttons -->
+                        <div class="product-actions mb-4">
+                            <button class="btn-primary-custom me-3" id="add-to-cart-btn">
+                                <i class="fas fa-shopping-cart me-2"></i>Add to Cart
+                            </button>
+                            <button class="btn-outline-primary" id="wishlist-btn">
+                                <i class="far fa-heart me-2"></i>Add to Wishlist
+                            </button>
+                        </div>
+                        
+                        <!-- Product Features -->
+                        <div class="product-features mb-4">
+                            <h5>Features:</h5>
+                            <ul>
+                                <li><i class="fas fa-check text-success me-2"></i>Handcrafted with premium materials</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Energy efficient LED compatible</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Adjustable height</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Easy installation</li>
+                                <li><i class="fas fa-check text-success me-2"></i>1-year warranty</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Shipping Info -->
+                        <div class="shipping-info">
+                            <div class="d-flex align-items-center mb-2">
+                                <i class="fas fa-truck text-primary me-3"></i>
+                                <span>Free shipping on orders over $500</span>
+                            </div>
+                            <div class="d-flex align-items-center mb-2">
+                                <i class="fas fa-undo text-primary me-3"></i>
+                                <span>30-day return policy</span>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-shield-alt text-primary me-3"></i>
+                                <span>Quality guarantee</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Details Tabs -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="product-detail-container">
+                <ul class="nav nav-tabs" id="productTabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="description-tab" data-bs-toggle="tab" data-bs-target="#description" type="button">Description</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="specifications-tab" data-bs-toggle="tab" data-bs-target="#specifications" type="button">Specifications</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="reviews-tab" data-bs-toggle="tab" data-bs-target="#reviews" type="button">Reviews</button>
+                    </li>
+                </ul>
+                <div class="tab-content mt-4" id="productTabsContent">
+                    <div class="tab-pane fade show active" id="description" role="tabpanel">
+                        <h4>Product Description</h4>
+                        <p id="detailed-description">This exquisite handmade chandelier represents the pinnacle of artisanal craftsmanship. Each piece is carefully constructed by skilled artisans who have perfected their techniques over decades of dedication to their art.</p>
+                        <p>The chandelier features intricate metalwork with delicate crystal accents that catch and refract light beautifully, creating a mesmerizing display of illumination. The design combines traditional elegance with modern functionality, making it suitable for both classic and contemporary interiors.</p>
+                        <p>Every component is selected for its quality and durability, ensuring that your chandelier will remain a stunning centerpiece in your home for generations to come.</p>
+                    </div>
+                    <div class="tab-pane fade" id="specifications" role="tabpanel">
+                        <h4>Technical Specifications</h4>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <ul>
+                                    <li><strong>Material:</strong> Premium brass with crystal accents</li>
+                                    <li><strong>Height:</strong> Adjustable 24-36 inches</li>
+                                    <li><strong>Diameter:</strong> 30 inches</li>
+                                    <li><strong>Weight:</strong> 15 lbs</li>
+                                    <li><strong>Bulbs:</strong> 6 x E12 (40W max)</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <ul>
+                                    <li><strong>Voltage:</strong> 110-120V</li>
+                                    <li><strong>Dimmable:</strong> Yes</li>
+                                    <li><strong>Certification:</strong> UL Listed</li>
+                                    <li><strong>Warranty:</strong> 1 year manufacturer warranty</li>
+                                    <li><strong>Installation:</strong> Professional recommended</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="reviews" role="tabpanel">
+                        <h4>Customer Reviews</h4>
+                        <div class="review-item mb-4">
+                            <div class="d-flex align-items-center mb-2">
+                                <div class="stars text-warning me-3">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <strong>Sarah Johnson</strong>
+                                <span class="text-muted ms-auto">2 days ago</span>
+                            </div>
+                            <p>Absolutely stunning chandelier! The craftsmanship is exceptional and it transformed our dining room completely. Worth every penny!</p>
+                        </div>
+                        <div class="review-item mb-4">
+                            <div class="d-flex align-items-center mb-2">
+                                <div class="stars text-warning me-3">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <strong>Michael Davis</strong>
+                                <span class="text-muted ms-auto">1 week ago</span>
+                            </div>
+                            <p>Beautiful piece of art! The attention to detail is amazing and the customer service was outstanding. Highly recommend!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Products -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Related Products</h2>
+            <div class="row" id="related-products">
+                <!-- Related products will be loaded by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="footer-widget">
+                        <h3>Lumi Craft Studio Gift LLC</h3>
+                        <p>Your premier destination for exquisite handmade chandeliers that bring light and elegance to your space.</p>
+                        <p><i class="fas fa-envelope"></i> contact@lumicraftstudiogift.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> 1012 Marquez Place, Ste. 106-B Santa Fe, NM 87505 United States</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="footer-widget">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                            <li><a href="shipping-policy.html">Shipping Policy</a></li>
+                            <li><a href="terms-conditions.html">Terms and Conditions</a></li>
+                            <li><a href="returns-refunds.html">Returns and Refunds Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="footer-widget">
+                        <h3>Newsletter</h3>
+                        <p>Subscribe to receive updates on new products and special offers.</p>
+                        <form class="newsletter-form" id="newsletter-form">
+                            <input type="email" placeholder="Your email" required>
+                            <button type="submit">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <hr class="bg-white my-4">
+            <div class="text-center">
+                <p>&copy; 2024 Lumi Craft Studio Gift LLC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Notification -->
+    <div id="notification" class="notification"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

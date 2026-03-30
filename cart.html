@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - Lumi Craft Studio Gift LLC</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="top-bar">
+            <div class="container">
+                <div class="contact-info">
+                    <i class="fas fa-envelope"></i> contact@lumicraftstudiogift.com
+                    <span class="ms-3"><i class="fas fa-map-marker-alt"></i> 1012 Marquez Place, Ste. 106-B Santa Fe, NM 87505</span>
+                </div>
+                <div class="social-links">
+                    <a href="#" class="text-white me-2"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="text-white me-2"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-white"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-lg main-nav">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <i class="fas fa-lightbulb me-2"></i>Lumi Craft Studio Gift
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="products.html">Products</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="cart.html">
+                                <i class="fas fa-shopping-cart"></i> Cart
+                                <span class="cart-badge" id="cart-count">0</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h1 class="text-center mb-4">Shopping Cart</h1>
+            <p class="text-center lead">Review your selected items before checkout</p>
+        </div>
+    </section>
+
+    <!-- Cart Content -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Cart Items -->
+                <div class="col-lg-8">
+                    <div id="cart-items-container">
+                        <!-- Cart items will be loaded here by JavaScript -->
+                    </div>
+                    
+                    <!-- Empty Cart Message -->
+                    <div id="empty-cart" class="text-center py-5" style="display: none;">
+                        <i class="fas fa-shopping-cart fa-4x text-muted mb-4"></i>
+                        <h3>Your cart is empty</h3>
+                        <p class="text-muted">Looks like you haven't added any products to your cart yet.</p>
+                        <a href="products.html" class="btn-primary-custom">Continue Shopping</a>
+                    </div>
+                </div>
+                
+                <!-- Cart Summary -->
+                <div class="col-lg-4">
+                    <div class="cart-summary">
+                        <h4 class="mb-4">Order Summary</h4>
+                        
+                        <div class="d-flex justify-content-between mb-3">
+                            <span>Subtotal:</span>
+                            <span id="subtotal">$0.00</span>
+                        </div>
+                        
+                        <div class="d-flex justify-content-between mb-3">
+                            <span>Shipping:</span>
+                            <span id="shipping">$0.00</span>
+                        </div>
+                        
+                        <div class="d-flex justify-content-between mb-3">
+                            <span>Tax:</span>
+                            <span id="tax">$0.00</span>
+                        </div>
+                        
+                        <hr>
+                        
+                        <div class="d-flex justify-content-between mb-4">
+                            <h5>Total:</h5>
+                            <h5 id="total">$0.00</h5>
+                        </div>
+                        
+                        <!-- Promo Code -->
+                        <div class="mb-4">
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="promo-code" placeholder="Promo code">
+                                <button class="btn btn-outline-secondary" type="button" id="apply-promo">Apply</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Checkout Button -->
+                        <button class="checkout-btn" id="checkout-btn">
+                            <i class="fas fa-lock me-2"></i>Proceed to Checkout
+                        </button>
+                        
+                        <!-- Security Info -->
+                        <div class="mt-4 text-center">
+                            <small class="text-muted">
+                                <i class="fas fa-shield-alt me-1"></i>
+                                Secure checkout powered by SSL encryption
+                            </small>
+                        </div>
+                        
+                        <!-- Payment Methods -->
+                        <div class="mt-4">
+                            <h6 class="mb-3">We Accept:</h6>
+                            <div class="d-flex gap-2">
+                                <i class="fab fa-cc-visa fa-2x text-muted"></i>
+                                <i class="fab fa-cc-mastercard fa-2x text-muted"></i>
+                                <i class="fab fa-cc-amex fa-2x text-muted"></i>
+                                <i class="fab fa-cc-discover fa-2x text-muted"></i>
+                                <i class="fab fa-cc-paypal fa-2x text-muted"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Continue Shopping -->
+                    <div class="text-center mt-4">
+                        <a href="products.html" class="text-decoration-none">
+                            <i class="fas fa-arrow-left me-2"></i>Continue Shopping
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Products -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">You Might Also Like</h2>
+            <div class="row" id="related-products">
+                <!-- Related products will be loaded by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="footer-widget">
+                        <h3>Lumi Craft Studio Gift LLC</h3>
+                        <p>Your premier destination for exquisite handmade chandeliers that bring light and elegance to your space.</p>
+                        <p><i class="fas fa-envelope"></i> contact@lumicraftstudiogift.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> 1012 Marquez Place, Ste. 106-B Santa Fe, NM 87505 United States</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="footer-widget">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                            <li><a href="shipping-policy.html">Shipping Policy</a></li>
+                            <li><a href="terms-conditions.html">Terms and Conditions</a></li>
+                            <li><a href="returns-refunds.html">Returns and Refunds Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="footer-widget">
+                        <h3>Newsletter</h3>
+                        <p>Subscribe to receive updates on new products and special offers.</p>
+                        <form class="newsletter-form" id="newsletter-form">
+                            <input type="email" placeholder="Your email" required>
+                            <button type="submit">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <hr class="bg-white my-4">
+            <div class="text-center">
+                <p>&copy; 2024 Lumi Craft Studio Gift LLC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Notification -->
+    <div id="notification" class="notification"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
